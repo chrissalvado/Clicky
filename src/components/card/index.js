@@ -25,7 +25,7 @@ export default function Card(props) {
     // )
     return(
         <div>
-            <img style={{height:'200px'}} src={props.pic} id= {props.id} onClick={props.click}/>
+            <img style={{height:'200px',borderradius:'2px',textalign:'left',paddingLeft:'1rem',paddingright:'1rem',float:'left',bordersizing:'border-box'}} src={props.pic} id= {props.id} onClick={props.click}/>
         </div>
     ) 
 }

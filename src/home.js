@@ -79,7 +79,7 @@ this.setState({
       console.log(this.state,"src")
     return (
         <div>
-      <div>test</div>
+      <div>Click on the PJ Poater Images ..... Try not to click the same box twice !!!</div>
       {this.state.pics.map((singleobj)=>{
          return<Card pic={singleobj.pic} id= {singleobj.id} click = {this.handleclick}/> 
       })}
@@ -87,6 +87,10 @@ this.setState({
       </div>
     );
   }
+  
+  
+
+  
 }
 
 export default home;
