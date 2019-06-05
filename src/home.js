@@ -5,11 +5,14 @@ import pic3 from './img/pj3.png'
 import pic4 from './img/pj4.jpg'
 import pic5 from './img/pj5.jpg'
 import pic6 from './img/pj6.jpg'
-import pic7 from './img/pj7.png'
+import pic7 from './img/pj7.jpg'
 import pic8 from './img/pj8.png'
 import pic9 from './img/pj9.png'
 import pic10 from './img/pj10.jpg'
-
+import pic11 from './img/pj11.jpg'
+import pic12 from './img/pj12.jpg'
+import pic13 from './img/pj13.jpg'
+import pic14 from './img/pj14.jpg'
 import Card from './components/card/index';
 class home extends React.Component {
  state ={
@@ -53,6 +56,22 @@ class home extends React.Component {
         id:10,
         pic:pic10
     },
+    {
+        id:11,
+        pic:pic11
+    },
+    {
+        id:12,
+        pic:pic12
+    },
+    {
+        id:13,
+        pic:pic13
+    },
+    {
+        id:14,
+        pic:pic14
+    },
     ]
  }
  handleclick = ()=> {
@@ -74,6 +93,7 @@ this.setState({
     pics:ReorderArray
 })
  }
+ 
 
   render() {
       console.log(this.state,"src")
@@ -85,7 +105,9 @@ this.setState({
       })}
       
       </div>
+
     );
+    
   }
   
   
