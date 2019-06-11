@@ -19,6 +19,7 @@ class home extends React.Component {
      pics:[{
          id:1,
          pic:pic1
+    
      },
      {
          id:2,
@@ -72,10 +73,42 @@ class home extends React.Component {
         id:14,
         pic:pic14
     },
-    ]
+    ],
+    ids:[],
+    score: 0,
+      goal: 10,
+      status: ""
  }
- handleclick = ()=> {
-     console.log('u got clicked')
+
+
+    checkwin = id => {
+        let clickedpics = this.state.clickedpics;
+    console.log(this.state.ids.includes(id),'this is it')
+        if(this.state.ids.includes(id)){
+            alert("we lost")
+        //   
+          return true
+        }
+        // else{
+        //   clickedpics.push(pics)
+    
+        //   if(clickedpics.length === 8){
+        //     this.setState({score: 10, status: "You Won! Great Job, Smartie! Click to play again!", clickedpics: []});
+        //     console.log('You Win');
+        //     return;
+        //   }
+    
+        //   this.setState({ pics, clickedpics, score: clickedpics.length, status: " " });
+        // }
+    }
+ handleclick = (id)=> {
+     console.log('u got clicked',id)
+if(this.checkwin(id)){
+    this.setState({ ids: [], score: 0, status:  "Game Over! You lost. Click to play again!" });
+}else{
+
+
+
 
      function shuffle(a) {
         var j, x, i;
@@ -89,9 +122,18 @@ class home extends React.Component {
     }
 var oldArray = this.state.pics
 var ReorderArray = shuffle(oldArray)
+var newids = this.state.ids.concat(id)
+var newscore = this.state.score + 1 
+
+
 this.setState({
-    pics:ReorderArray
+    pics:ReorderArray,
+    ids: newids,
+    score: newscore
+
 })
+
+}
  }
  
 
@@ -99,12 +141,14 @@ this.setState({
       console.log(this.state,"src")
     return (
         <div>
-      <div>Click on the PJ Poater Images ..... Try not to click the same box twice !!!</div>
+      <h1>Click on the PJ Poster Images ..... Try not to click the same box twice !!!</h1>
+      <h1 style={{color:"white"}}>score:{this.state.score}</h1>
       {this.state.pics.map((singleobj)=>{
          return<Card pic={singleobj.pic} id= {singleobj.id} click = {this.handleclick}/> 
       })}
       
       </div>
+
 
     );
     

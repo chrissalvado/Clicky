@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import "./styles.css"
 
 export default function Card(props) {
-   console.log(props)
+//    console.log(props)
     // return(
     // <div
     // // className={}
@@ -25,9 +25,12 @@ export default function Card(props) {
     // )
     return(
         <div>
-            <img style={{height:'250px',borderradius:'2px',textalign:'left',position:'relative',paddingtop:'1%', paddingbottom:'1%',paddingLeft:'1rem',paddingright:'1rem',float:'left',bordersizing:'border-box'}} src={props.pic} id= {props.id} onClick={props.click}/>
+            <img style={{alignitems:'center', justifycontent: 'space around' ,height:'250px',borderradius:'2px',textalign:'left',position:'relative',paddingtop:'1%', paddingbottom:'1%',paddingLeft:'1rem',paddingright:'1rem',float:'left',bordersizing:'border-box'}} src={props.pic} id= {props.id} onClick={()=>{props.click(props.id)}}/>
         </div>
+    
+
     ) 
+
 }
 
 Card.propTypes = {
