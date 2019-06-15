@@ -85,7 +85,7 @@ class home extends React.Component {
         let clickedpics = this.state.clickedpics;
     console.log(this.state.ids.includes(id),'this is it')
         if(this.state.ids.includes(id)){
-            alert("we lost")
+            alert("YOU LOSE !!!")
         //   
           return true
         }
